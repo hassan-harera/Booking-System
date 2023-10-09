@@ -1,0 +1,19 @@
+version: '3'
+services:
+  booking-mysql:
+    container_name: booking-mysql
+    image: 'mysql:latest'
+    environment:
+      MYSQL_DATABASE: booking_db
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - '3306:3306'
+    restart: always
+  booking-cache:
+    image: redis:latest
+    network_mode: host
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass Abc@123456

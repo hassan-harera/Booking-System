@@ -1,4 +1,4 @@
-package com.example.bookingsystem;
+package com.harera.bookingsystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
